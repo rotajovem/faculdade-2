@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102f2b">
+  <meta name="description" content="Crie seu currículo com o Rota Jovem e dê o próximo passo na sua trajetória profissional.">
+  <title>Rota Jovem — Seu próximo passo começa aqui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Rota Jovem, início">
+      <span class="brand-mark" aria-hidden="true">RJ</span>
+      <span>rota<span class="brand-accent">jovem</span></span>
+    </a>
+    <span class="header-note">Seu futuro profissional começa com um passo.</span>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> SEU CAMINHO, SUAS CONQUISTAS</p>
+        <h1 id="page-title">Toda trajetória<br>tem um <span>começo.</span></h1>
+        <p class="intro-description">Conte um pouco sobre você. A gente organiza suas experiências e transforma suas informações em um currículo pronto para abrir caminhos.</p>
+        <div class="steps" aria-label="Etapas">
+          <span class="step active"><span>1</span> Suas informações</span>
+          <span class="step-line" aria-hidden="true"></span>
+          <span class="step"><span>2</span> Seu currículo</span>
+        </div>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <div class="art-sun"></div>
+        <div class="art-path"></div>
+        <div class="art-card">
+          <span class="art-card-icon">↗</span>
+          <span>novos caminhos<br><strong>começam aqui</strong></span>
+        </div>
+        <span class="art-star star-one">✳</span>
+        <span class="art-star star-two">✳</span>
+      </div>
+    </section>
+
+    <section class="form-section" id="form-section" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">PASSO 1 DE 2</p>
+          <h2 id="form-title">Vamos nos conhecer?</h2>
+          <p class="section-description">Preencha o que souber. Você pode deixar em branco os campos opcionais.</p>
+        </div>
+        <span class="required-note"><span aria-hidden="true">*</span> Obrigatório</span>
+      </div>
+
+      <form id="resume-form">
+        <fieldset class="form-group">
+          <legend><span class="group-number">01</span> Sobre você</legend>
+          <div class="field-grid">
+            <label class="field field-full">
+              <span>Nome completo <span class="required-mark" aria-hidden="true">*</span></span>
+              <input name="name" type="text" autocomplete="name" placeholder="Como você gostaria de ser chamado(a)?" required>
+            </label>
+            <label class="field">
+              <span>Data de nascimento <span class="required-mark" aria-hidden="true">*</span></span>
+              <input name="birthDate" type="date" autocomplete="bday" required>
+            </label>
+            <label class="field">
+              <span>Cidade e estado</span>
+              <input name="location" type="text" autocomplete="address-level2" placeholder="Ex.: Recife, PE">
+            </label>
+            <label class="field">
+              <span>E-mail</span>
+              <input name="email" type="email" autocomplete="email" placeholder="voce@email.com">
+            </label>
+            <label class="field">
+              <span>Telefone</span>
+              <input name="phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000">
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">02</span> Sua formação</legend>
+          <div class="field-grid">
+            <label class="field">
+              <span>Onde estuda ou estudou? <span class="required-mark" aria-hidden="true">*</span></span>
+              <input name="school" type="text" placeholder="Nome da escola ou instituição" required>
+            </label>
+            <label class="field">
+              <span>Curso, série ou área</span>
+              <input name="study" type="text" placeholder="Ex.: Ensino médio, 2º ano">
+            </label>
+            <label class="field field-full">
+              <span>Cursos complementares</span>
+              <textarea name="courses" rows="3" placeholder="Ex.: Informática básica — Senac, 2025&#10;Inglês para iniciantes — curso online, 2024"></textarea>
+              <small>Escreva um curso por linha, incluindo instituição e ano se souber.</small>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">03</span> O que você já fez</legend>
+          <div class="field-grid">
+            <label class="field field-full">
+              <span>Experiências de trabalho</span>
+              <textarea name="experience" rows="4" placeholder="Ex.: Jovem aprendiz — Empresa ABC (2025–atual)&#10;Atendimento ao público e organização de documentos"></textarea>
+              <small>Inclua trabalhos formais, informais, voluntariado ou projetos. Uma experiência por linha.</small>
+            </label>
+            <label class="field field-full">
+              <span>Suas qualidades e habilidades</span>
+              <textarea name="qualities" rows="3" placeholder="Ex.: Comunicativo(a), organização, trabalho em equipe, vontade de aprender"></textarea>
+              <small>Separe cada qualidade por vírgula ou escreva uma por linha.</small>
+            </label>
+            <label class="field field-full">
+              <span>Objetivo profissional <span class="optional-label">opcional</span></span>
+              <textarea name="objective" rows="2" placeholder="Ex.: Busco uma oportunidade como jovem aprendiz para desenvolver minhas habilidades."></textarea>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-footer">
+          <p class="privacy-note"><span aria-hidden="true">▣</span> Suas informações ficam neste dispositivo e não são enviadas a nenhum servidor.</p>
+          <button class="button button-primary" type="submit">Criar meu currículo <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </section>
+
+    <section class="result-section" id="result-section" aria-labelledby="result-title" hidden>
+      <div class="result-heading">
+        <div>
+          <p class="section-kicker">PASSO 2 DE 2</p>
+          <h2 id="result-title">Seu currículo está pronto!</h2>
+          <p class="section-description">Confira suas informações. Se quiser mudar algo, volte e edite o formulário.</p>
+        </div>
+        <div class="result-actions">
+          <button class="button button-secondary" id="edit-button" type="button">← Editar respostas</button>
+          <button class="button button-primary" id="print-button" type="button"><span aria-hidden="true">↓</span> Imprimir / salvar PDF</button>
+        </div>
+      </div>
+      <article class="resume" id="resume" aria-label="Currículo gerado"></article>
+      <p class="print-tip">Na janela de impressão, escolha “Salvar como PDF” para baixar seu currículo.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#" aria-label="Rota Jovem, início">
+      <span class="brand-mark" aria-hidden="true">RJ</span>
+      <span>rota<span class="brand-accent">jovem</span></span>
+    </a>
+    <p>Feito para ajudar você a encontrar seu próximo caminho.</p>
+  </footer>
+</body>
+</html>
