@@ -13,6 +13,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
   <header class="site-header">
     <a class="brand" href="#" aria-label="Rota Jovem, início">
       <span class="brand-mark" aria-hidden="true">RJ</span>
@@ -21,12 +22,13 @@
     <span class="header-note">Seu futuro profissional começa com um passo.</span>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="intro" aria-labelledby="page-title">
       <div class="intro-copy">
         <p class="eyebrow"><span class="eyebrow-dot"></span> SEU CAMINHO, SUAS CONQUISTAS</p>
         <h1 id="page-title">Toda trajetória<br>tem um <span>começo.</span></h1>
         <p class="intro-description">Conte um pouco sobre você. A gente organiza suas experiências e transforma suas informações em um currículo pronto para abrir caminhos.</p>
+        <p class="intro-privacy">Os dados fornecidos neste formulário serão utilizados exclusivamente para a elaboração do currículo, respeitando a Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018)</p>
         <div class="steps" aria-label="Etapas">
           <span class="step active"><span>1</span> Suas informações</span>
           <span class="step-line" aria-hidden="true"></span>
@@ -49,7 +51,7 @@
       <div class="section-heading">
         <div>
           <p class="section-kicker">PASSO 1 DE 2</p>
-          <h2 id="form-title">Vamos nos conhecer?</h2>
+          <h2 id="form-title" tabindex="-1">Vamos nos conhecer?</h2>
           <p class="section-description">Preencha o que souber. Você pode deixar em branco os campos opcionais.</p>
         </div>
         <span class="required-note"><span aria-hidden="true">*</span> Obrigatório</span>
@@ -57,66 +59,283 @@
 
       <form id="resume-form">
         <fieldset class="form-group">
-          <legend><span class="group-number">01</span> Sobre você</legend>
+          <legend><span class="group-number">01</span> Dados pessoais e contato</legend>
           <div class="field-grid">
             <label class="field field-full">
               <span>Nome completo <span class="required-mark" aria-hidden="true">*</span></span>
-              <input name="name" type="text" autocomplete="name" placeholder="Como você gostaria de ser chamado(a)?" required>
-            </label>
-            <label class="field">
-              <span>Data de nascimento <span class="required-mark" aria-hidden="true">*</span></span>
-              <input name="birthDate" type="date" autocomplete="bday" required>
+              <input name="name" type="text" autocomplete="name" required>
             </label>
             <label class="field">
               <span>Cidade e estado</span>
               <input name="location" type="text" autocomplete="address-level2" placeholder="Ex.: Recife, PE">
             </label>
             <label class="field">
+              <span>Telefone ou WhatsApp</span>
+              <input name="phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000">
+            </label>
+            <label class="field">
               <span>E-mail</span>
               <input name="email" type="email" autocomplete="email" placeholder="voce@email.com">
             </label>
             <label class="field">
-              <span>Telefone</span>
-              <input name="phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000">
+              <span>LinkedIn <span class="optional-label">opcional</span></span>
+              <input name="linkedin" type="url" autocomplete="url" placeholder="https://linkedin.com/in/seu-perfil">
+            </label>
+            <label class="field field-full">
+              <span>Portfólio ou site profissional <span class="optional-label">opcional</span></span>
+              <input name="portfolio" type="url" placeholder="https://">
             </label>
           </div>
         </fieldset>
 
         <fieldset class="form-group">
-          <legend><span class="group-number">02</span> Sua formação</legend>
+          <legend><span class="group-number">02</span> Qual oportunidade você procura?</legend>
           <div class="field-grid">
             <label class="field">
-              <span>Onde estuda ou estudou? <span class="required-mark" aria-hidden="true">*</span></span>
-              <input name="school" type="text" placeholder="Nome da escola ou instituição" required>
+              <span>Tipo de oportunidade</span>
+              <select name="opportunity">
+                <option value="">Selecione</option>
+                <option>Primeiro emprego</option>
+                <option>Jovem aprendiz</option>
+                <option>Estágio</option>
+                <option>Emprego</option>
+                <option>Temporário</option>
+                <option>Outra oportunidade</option>
+              </select>
             </label>
             <label class="field">
-              <span>Curso, série ou área</span>
-              <input name="study" type="text" placeholder="Ex.: Ensino médio, 2º ano">
+              <span>Área de interesse</span>
+              <input name="area" type="text" placeholder="Ex.: Administrativo, tecnologia">
             </label>
-            <label class="field field-full">
-              <span>Cursos complementares</span>
-              <textarea name="courses" rows="3" placeholder="Ex.: Informática básica — Senac, 2025&#10;Inglês para iniciantes — curso online, 2024"></textarea>
-              <small>Escreva um curso por linha, incluindo instituição e ano se souber.</small>
+            <label class="field">
+              <span>Cargo desejado</span>
+              <input name="role" type="text" placeholder="Ex.: Assistente administrativo">
+            </label>
+            <label class="field">
+              <span>Modalidade de trabalho</span>
+              <select name="modality">
+                <option value="">Selecione</option>
+                <option>Presencial</option>
+                <option>Remoto</option>
+                <option>Híbrido</option>
+                <option>Indiferente</option>
+              </select>
             </label>
           </div>
         </fieldset>
 
         <fieldset class="form-group">
-          <legend><span class="group-number">03</span> O que você já fez</legend>
+          <legend><span class="group-number">03</span> Formação acadêmica</legend>
+          <div class="field-grid">
+            <label class="field">
+              <span>Nível de escolaridade</span>
+              <select name="educationLevel">
+                <option value="">Selecione</option>
+                <option>Ensino fundamental</option>
+                <option>Ensino médio</option>
+                <option>Curso técnico</option>
+                <option>Graduação</option>
+                <option>Pós-graduação</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Instituição de ensino</span>
+              <input name="school" type="text" placeholder="Escola, faculdade ou instituição">
+            </label>
+            <label class="field">
+              <span>Curso ou área de formação</span>
+              <input name="study" type="text" placeholder="Ex.: Ensino médio, Administração">
+            </label>
+            <label class="field">
+              <span>Período ou semestre <span class="optional-label">opcional</span></span>
+              <input name="term" type="text" placeholder="Ex.: 2º ano, 4º semestre">
+            </label>
+            <label class="field">
+              <span>Ano de início</span>
+              <input name="startYear" type="number" inputmode="numeric" min="1950" max="2100" placeholder="2024">
+            </label>
+            <label class="field">
+              <span>Ano de conclusão ou previsão</span>
+              <input name="endYear" type="number" inputmode="numeric" min="1950" max="2100" placeholder="2027">
+            </label>
+            <label class="field">
+              <span>Turno de estudo <span class="optional-label">opcional</span></span>
+              <select name="shift">
+                <option value="">Selecione</option>
+                <option>Manhã</option>
+                <option>Tarde</option>
+                <option>Noite</option>
+                <option>Integral</option>
+                <option>EAD</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Formação complementar <span class="optional-label">opcional</span></span>
+              <input name="complementaryEducation" type="text" placeholder="Ex.: Técnico em Administração">
+            </label>
+            <label class="field field-full">
+              <span>Iniciação científica, monitoria ou atividades acadêmicas <span class="optional-label">opcional</span></span>
+              <textarea name="academicActivities" rows="2"></textarea>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">04</span> Experiência profissional</legend>
+          <p class="group-help">Tudo bem não ter experiência formal. Projetos, voluntariado e responsabilidades também contam.</p>
+          <div class="field-grid">
+            <fieldset class="choice-group field-full">
+              <legend>Você já teve alguma experiência profissional?</legend>
+              <label><input type="radio" name="hasExperience" value="yes"> Sim</label>
+              <label><input type="radio" name="hasExperience" value="no"> Ainda não</label>
+            </fieldset>
+            <div class="field-full conditional-panel" id="experience-panel" hidden>
+              <div class="repeat-list" id="experience-list">
+                <div class="repeat-item" data-entry>
+                  <div class="field-grid">
+                    <label class="field"><span>Cargo ou função</span><input name="experienceRole[]" type="text"></label>
+                    <label class="field"><span>Empresa ou organização</span><input name="experienceCompany[]" type="text"></label>
+                    <label class="field"><span>Período</span><input name="experiencePeriod[]" type="text" placeholder="Ex.: jan/2025 – atual"></label>
+                    <label class="field"><span>Principais responsabilidades e resultados</span><textarea name="experienceDetails[]" rows="2"></textarea></label>
+                  </div>
+                  <button class="remove-entry" type="button" aria-label="Remover esta experiência" hidden>Remover experiência</button>
+                </div>
+              </div>
+              <button class="button button-secondary add-entry" type="button" data-add="experience-list">+ Adicionar experiência</button>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">05</span> Projetos, voluntariado e atividades</legend>
+          <p class="group-help">Pode incluir atividades escolares ou comunitárias, ajuda em negócio familiar, eventos, grêmio, empresa júnior ou monitoria.</p>
+          <div class="repeat-list" id="activity-list">
+            <div class="repeat-item" data-entry>
+              <div class="field-grid">
+                <label class="field"><span>Projeto ou atividade</span><input name="activityName[]" type="text" placeholder="Ex.: Campanha de arrecadação"></label>
+                <label class="field"><span>Tipo de participação</span><input name="activityType[]" type="text" placeholder="Ex.: Voluntariado, projeto escolar"></label>
+                <label class="field field-full"><span>Sua responsabilidade e o que realizou ou aprendeu</span><textarea name="activityDetails[]" rows="3"></textarea></label>
+              </div>
+              <button class="remove-entry" type="button" aria-label="Remover esta atividade" hidden>Remover atividade</button>
+            </div>
+          </div>
+          <button class="button button-secondary add-entry" type="button" data-add="activity-list">+ Adicionar atividade</button>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">06</span> Cursos e certificações</legend>
+          <p class="group-help">Inclua cursos gratuitos ou pagos, presenciais ou on-line. Se não souber algum dado, deixe em branco.</p>
+          <div class="repeat-list" id="course-list">
+            <div class="repeat-item" data-entry>
+              <div class="field-grid">
+                <label class="field"><span>Nome do curso</span><input name="courseName[]" type="text" placeholder="Ex.: Excel básico"></label>
+                <label class="field"><span>Instituição responsável</span><input name="courseInstitution[]" type="text"></label>
+                <label class="field"><span>Carga horária</span><input name="courseHours[]" type="text" placeholder="Ex.: 20 horas"></label>
+                <label class="field"><span>Ano de conclusão</span><input name="courseYear[]" type="number" inputmode="numeric" min="1950" max="2100"></label>
+                <label class="field"><span>Situação</span><select name="courseStatus[]"><option value="">Selecione</option><option>Concluído</option><option>Em andamento</option></select></label>
+                <label class="field"><span>Possui certificado?</span><select name="courseCertificate[]"><option value="">Selecione</option><option>Sim</option><option>Não</option></select></label>
+              </div>
+              <button class="remove-entry" type="button" aria-label="Remover este curso" hidden>Remover curso</button>
+            </div>
+          </div>
+          <button class="button button-secondary add-entry" type="button" data-add="course-list">+ Adicionar curso</button>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">07</span> Conhecimentos técnicos</legend>
+          <p class="group-help">Marque apenas o que realmente sabe fazer. Depois, indique seu nível em cada conhecimento selecionado.</p>
+          <div class="skill-grid">
+            <fieldset class="skill-category"><legend>Informática e ferramentas</legend>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Pacote Office"><span>Pacote Office</span><select name="skillLevel_Pacote Office" aria-label="Nível em Pacote Office" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Excel"><span>Excel</span><select name="skillLevel_Excel" aria-label="Nível em Excel" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Informática básica"><span>Informática básica</span><select name="skillLevel_Informática básica" aria-label="Nível em Informática básica" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Programação"><span>Programação</span><select name="skillLevel_Programação" aria-label="Nível em Programação" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+            </fieldset>
+            <fieldset class="skill-category"><legend>Negócios e serviços</legend>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Atendimento ao cliente"><span>Atendimento ao cliente</span><select name="skillLevel_Atendimento ao cliente" aria-label="Nível em Atendimento ao cliente" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Rotinas administrativas"><span>Rotinas administrativas</span><select name="skillLevel_Rotinas administrativas" aria-label="Nível em Rotinas administrativas" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Vendas"><span>Vendas</span><select name="skillLevel_Vendas" aria-label="Nível em Vendas" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Marketing digital"><span>Marketing digital</span><select name="skillLevel_Marketing digital" aria-label="Nível em Marketing digital" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Logística"><span>Logística</span><select name="skillLevel_Logística" aria-label="Nível em Logística" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+              <label class="skill-option"><input type="checkbox" name="skills[]" value="Educação financeira"><span>Educação financeira</span><select name="skillLevel_Educação financeira" aria-label="Nível em Educação financeira" hidden><option value="">Nível</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select></label>
+            </fieldset>
+          </div>
+          <label class="field custom-skill">
+            <span>Outro conhecimento técnico <span class="optional-label">opcional</span></span>
+            <input name="otherSkills" type="text" placeholder="Ex.: edição de imagem, manutenção de computadores">
+          </label>
+          <label class="field custom-skill">
+            <span>Nível nesse conhecimento <span class="optional-label">opcional</span></span>
+            <select name="otherSkillLevel"><option value="">Selecione</option><option>Básico</option><option>Intermediário</option><option>Avançado</option></select>
+          </label>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">08</span> Idiomas</legend>
+          <div class="repeat-list" id="language-list">
+            <div class="repeat-item" data-entry>
+              <div class="field-grid">
+                <label class="field"><span>Idioma</span><input name="languageName[]" type="text" placeholder="Ex.: Inglês"></label>
+                <label class="field"><span>Compreensão</span><select name="languageComprehension[]"><option value="">Selecione</option><option>Básico</option><option>Intermediário</option><option>Avançado</option><option>Fluente</option></select></label>
+                <label class="field"><span>Conversação</span><select name="languageSpeaking[]"><option value="">Selecione</option><option>Básico</option><option>Intermediário</option><option>Avançado</option><option>Fluente</option></select></label>
+                <label class="field"><span>Leitura e escrita</span><select name="languageLiteracy[]"><option value="">Selecione</option><option>Básico</option><option>Intermediário</option><option>Avançado</option><option>Fluente</option></select></label>
+                <label class="field"><span>Possui certificado?</span><select name="languageCertificate[]"><option value="">Selecione</option><option>Sim</option><option>Não</option></select></label>
+              </div>
+              <button class="remove-entry" type="button" aria-label="Remover este idioma" hidden>Remover idioma</button>
+            </div>
+          </div>
+          <button class="button button-secondary add-entry" type="button" data-add="language-list">+ Adicionar idioma</button>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">09</span> Competências comportamentais</legend>
           <div class="field-grid">
             <label class="field field-full">
-              <span>Experiências de trabalho</span>
-              <textarea name="experience" rows="4" placeholder="Ex.: Jovem aprendiz — Empresa ABC (2025–atual)&#10;Atendimento ao público e organização de documentos"></textarea>
-              <small>Inclua trabalhos formais, informais, voluntariado ou projetos. Uma experiência por linha.</small>
+              <span>Qual situação mais representa você?</span>
+              <select name="competency">
+                <option value="">Selecione uma situação</option>
+                <option value="Trabalho em equipe">Colaborei com outras pessoas para alcançar um objetivo — trabalho em equipe</option>
+                <option value="Comunicação">Expliquei uma ideia ou ouvi diferentes pontos de vista — comunicação</option>
+                <option value="Organização">Planejei tarefas e cumpri prazos — organização</option>
+                <option value="Resolução de problemas">Encontrei uma solução diante de um desafio — resolução de problemas</option>
+                <option value="Proatividade">Percebi uma necessidade e tomei iniciativa — proatividade</option>
+                <option value="Aprendizagem">Aprendi algo novo para realizar uma tarefa — aprendizagem contínua</option>
+                <option value="Responsabilidade">Assumi uma responsabilidade e acompanhei sua conclusão — responsabilidade</option>
+              </select>
             </label>
             <label class="field field-full">
-              <span>Suas qualidades e habilidades</span>
-              <textarea name="qualities" rows="3" placeholder="Ex.: Comunicativo(a), organização, trabalho em equipe, vontade de aprender"></textarea>
-              <small>Separe cada qualidade por vírgula ou escreva uma por linha.</small>
+              <span>Conte uma situação em que demonstrou isso <span class="optional-label">opcional</span></span>
+              <textarea name="competencyExample" rows="3" placeholder="O que aconteceu, qual foi sua ação e o que conseguiu realizar?"></textarea>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span class="group-number">10</span> Disponibilidade e informações adicionais</legend>
+          <div class="field-grid">
+            <label class="field">
+              <span>Disponibilidade de horário</span>
+              <input name="availability" type="text" placeholder="Ex.: manhã e tarde, de segunda a sexta">
+            </label>
+            <label class="field">
+              <span>Disponibilidade para trabalho presencial</span>
+              <select name="onsite"><option value="">Selecione</option><option>Sim</option><option>Não</option><option>Combinado</option></select>
+            </label>
+            <label class="field">
+              <span>Disponibilidade para viagens <span class="optional-label">quando aplicável</span></span>
+              <select name="travel"><option value="">Selecione</option><option>Sim</option><option>Não</option><option>Depende da oportunidade</option></select>
+            </label>
+            <label class="field">
+              <span>Possibilidade de início</span>
+              <select name="startAvailability"><option value="">Selecione</option><option>Imediato</option><option>A combinar</option></select>
+            </label>
+            <label class="field">
+              <span>Carteira Nacional de Habilitação (CNH) <span class="optional-label">opcional</span></span>
+              <input name="license" type="text" placeholder="Ex.: Categoria B">
             </label>
             <label class="field field-full">
-              <span>Objetivo profissional <span class="optional-label">opcional</span></span>
-              <textarea name="objective" rows="2" placeholder="Ex.: Busco uma oportunidade como jovem aprendiz para desenvolver minhas habilidades."></textarea>
+              <span>Outras informações profissionais relevantes <span class="optional-label">opcional</span></span>
+              <textarea name="additional" rows="2"></textarea>
             </label>
           </div>
         </fieldset>
@@ -132,7 +351,7 @@
       <div class="result-heading">
         <div>
           <p class="section-kicker">PASSO 2 DE 2</p>
-          <h2 id="result-title">Seu currículo está pronto!</h2>
+          <h2 id="result-title" tabindex="-1">Seu currículo está pronto!</h2>
           <p class="section-description">Confira suas informações. Se quiser mudar algo, volte e edite o formulário.</p>
         </div>
         <div class="result-actions">
